@@ -16,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('conversations', 'ConversationsController', [
     'only' => ['index', 'show']
 ]);
+
+Route::post('/best-replies/{reply}', 'ConversationBestReplyController@store');
+
 
 Auth::routes();
 
