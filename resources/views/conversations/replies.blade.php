@@ -4,9 +4,12 @@
 
         {{ $reply->body }}
 
-        <form action="">
-            <button type="submit" class="btn p-0 text-muted">Best Reply?</button>
-        </form>
+        {{-- memo: AuthServiceProviderに登録したように、$conversationの投稿者がログインユーザーのもののみ表示 --}}
+@can('update-conversation', $conversation)
+    <form action="">
+        <button type="submit" class="btn p-0 text-muted">Best Reply?</button>
+    </form>
+@endcan
     </div>
 
     @continue($loop->last)
