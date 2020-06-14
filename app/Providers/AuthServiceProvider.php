@@ -28,8 +28,9 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         // memo: $conversationの投稿者がログインユーザー($user)のときtrueを返す
-        Gate::define('update-conversation', function(User $user, Conversation $conversation) {
-            return $conversation->user->is($user);
-        });
+        // =>　追記: Policyに定義
+        // Gate::define('update-conversation', function(User $user, Conversation $conversation) {
+        //     return $conversation->user->is($user);
+        // });
     }
 }
