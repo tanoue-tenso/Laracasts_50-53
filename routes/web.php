@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('conversations', 'ConversationsController', [
     'only' => ['index', 'show']
-]);
+]);// ->middleware('can:update,conversation') // memo: コントローラーに認可処理を書きたくない場合はrouteでmiddlewareとして呼び出すことができる
 
 Route::post('/best-replies/{reply}', 'ConversationBestReplyController@store');
 
