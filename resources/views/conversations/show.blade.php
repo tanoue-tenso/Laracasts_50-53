@@ -12,7 +12,7 @@
 
         <hr>
 
-        {{-- @include('conversations.replies') --}}
+        @include('conversations.replies')
     </div>
 
 @endsection

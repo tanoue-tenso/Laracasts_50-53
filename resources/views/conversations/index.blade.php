@@ -5,9 +5,8 @@
     @foreach ($conversations as $conversation)
         <h2><a href="{{ route('conversations.show', ['conversation' => $conversation]) }}">{{ $conversation->title }}</a></h2>
 
-        {{-- ループが最後のときにhrを非表示 --}}
+        {{-- memo: ループが最後のときにhrを非表示 --}}
         @continue($loop->last)
-
         <hr>
 
     @endforeach
