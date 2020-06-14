@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome');
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/conversations', 'ConversationsController@index');
-Route::get('/conversations/{conversation}', 'ConversationsController@show');
+Route::resource('conversations', 'ConversationsController', [
+    'only' => ['index', 'show']
+]);
 
 Auth::routes();
 
